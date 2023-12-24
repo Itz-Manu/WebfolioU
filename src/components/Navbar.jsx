@@ -6,11 +6,11 @@ export default function Navbar() {
         <div className='max-w-[1200px] mx-auto'>
             <nav className="p-3 text-black">
                 <div className="container mx-auto flex justify-between items-center">
-                    <div className="font-bold text-lg">
+                    <div className="font-bold text-lg cursor-pointer">
                        WebFolioU
                     </div>
 
-                    <div className="bg-white text-gray-800 p-1 rounded-full">
+                    <div className="bg-white text-gray-800 p-1 rounded-full cursor-pointer">
                         <FaUserCircle size="1.5em"/>
                     </div>
                 </div>
