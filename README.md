@@ -1,2 +1,2 @@
 # WebfolioU
-A Bloging Website
+A Website
