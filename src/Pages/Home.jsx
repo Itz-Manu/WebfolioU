@@ -6,7 +6,7 @@ import ToDoText from '../projects/ToDo-Basic/ToDo-Text';
 
 export default function Home() {
 
-  const [selectedNavItem, setSelectedNavItem] = useState('Home');
+  const [selectedNavItem, setSelectedNavItem] = useState('Welcome');
 
   const handleNavItemClick = (item) => {
     setSelectedNavItem(item);
