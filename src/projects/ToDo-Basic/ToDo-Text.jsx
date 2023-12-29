@@ -42,9 +42,9 @@ export default function ToDoText() {
 
                             <h2 className="text-2xl font-bold mb-2">Screenshots</h2>
                             <hr className='border-black mb-3'/>
-                            <div className="mb-4 flex gap-3">
-                                <img src={"src/projects/ToDo-Basic/image.png"} alt="Screenshot 1" className="w-[30vw] rounded-md" />
-                                <img src={"src/projects/ToDo-Basic/image-1.png"} alt="Screenshot 2" className="w-[30vw] rounded-md" />
+                            <div className="mb-4 flex gap-3 w-[30vw] rounded-md">
+                                <img src={"../src/projects/ToDo-Basic/image.png"} alt="Screenshot 1" />
+                                <img src={"../src/projects/ToDo-Basic/image-1.png"} alt="Screenshot 2" />
                             </div>
 
                             <h2 className="text-2xl font-bold mb-2">View Output</h2>
