@@ -3,7 +3,7 @@ import { FaUserCircle } from "react-icons/fa";
 
 export default function Navbar() {
     return (
-        <div className='max-w-[1200px] mx-auto'>
+        <div className='max-w-[1280px] mx-auto'>
             <nav className="p-3 text-black">
                 <div className="container mx-auto flex justify-between items-center">
                     <div className="font-bold text-lg cursor-pointer">
