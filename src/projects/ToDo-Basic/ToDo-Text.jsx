@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import TodoBasic from './todo-basic';
-import { IoIosArrowRoundBack } from "react-icons/io";
+import BackButton from '../../components/BackButton';
+
 
 export default function ToDoText() {
 
@@ -14,7 +15,7 @@ export default function ToDoText() {
             {
                 showOutput ?
                     <div>
-                        <button onClick={handleOutputButton} className='bg-indigo-400 text-white rounded-full p-2 absolute'><IoIosArrowRoundBack size="2em"/></button>
+                        <BackButton onClick={handleOutputButton}/>
                         <TodoBasic />
                     </div>
                     : <div>
