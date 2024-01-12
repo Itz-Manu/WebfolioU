@@ -4,6 +4,9 @@ import Footer from '../components/Footer'
 import TodoBasic from '../projects/ToDo-Basic/todo-basic'
 import ToDoText from '../projects/ToDo-Basic/ToDo-Text';
 import Welcome from './Welcome';
+import Kitchen from '../projects/Recipe/Kitchen';
+
+
 
 export default function Home() {
 
@@ -35,9 +38,9 @@ export default function Home() {
                   onClick={() => handleNavItemClick('TODO-Basic')}
                 > TODO-Basic</li>
 
-                <li className={`cursor-pointer py-2 px-4 mb-2 rounded ${selectedNavItem === 'Blog-App' ? 'bg-indigo-500' : 'hover:bg-gray-700'}`}
-                  onClick={() => handleNavItemClick('Blog-App')}
-                > Blog-App</li>
+                <li className={`cursor-pointer py-2 px-4 mb-2 rounded ${selectedNavItem === 'Recipes-App' ? 'bg-indigo-500' : 'hover:bg-gray-700'}`}
+                  onClick={() => handleNavItemClick('Recipes-App')}
+                > Recipes-App</li>
 
                 <li className={`cursor-pointer py-2 px-4 mb-2 rounded ${selectedNavItem === 'Quiz-App' ? 'bg-indigo-500' : 'hover:bg-gray-700'}`}
                   onClick={() => handleNavItemClick('Quiz-App')}
@@ -59,10 +62,10 @@ export default function Home() {
                 <div><ToDoText /></div>
               )}
 
-              {selectedNavItem === 'Blog-App' && (
+              {selectedNavItem === 'Recipes-App' && (
                 <div>
-                  <div className="font-bold text-gray-500 text-lg text-center my-auto mt-[25%]">
-                    Under Developmant
+                  <div className="">
+                    <Kitchen />
                   </div>
                 </div>
               )}
