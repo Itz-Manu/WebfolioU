@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-export default function Recipes() {
+export default function Recipes({searchResult}) {
+  //console.log(searchResult);
+  const [data, setData] = useState([]);
+
+  useEffect(() => { 
+    setData(searchResult);
+  }, [searchResult]);
+
+  console.log(data);
+
+  if(data.length === 0) return <div className="text-gray-500 text-center text-2xl font-bold">No Result Found</div>
+
+  //if(data) return <div className="text-gray-500 text-center text-2xl font-bold">Search for something...</div>
+
   return (
     <div>
       <div className="flex flex-wrap">
