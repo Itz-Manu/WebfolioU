@@ -36,7 +36,7 @@ export default function customQuery(search) {
               setError(error);
               setLoading(true);
             }
-          })();
+          })();     // IIFE (Immediately Invoked Function Expression)
     }
     
 

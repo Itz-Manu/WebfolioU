@@ -4,12 +4,15 @@ import Recipes from "./Recipes";
 import customQuery from "./customQuery";
 
 export default function Kitchen() {
+
   const [search, setsearch] = useState("");
+  const [result, setresult] = useState(false);
   const inputRef = useRef();
 
   const handleclick = () => {
     const inputText = inputRef.current.value;
     setsearch(inputText);
+    setresult(true);
   };
 
   const [data, error, loading] = customQuery(search); // customQuery is a custom hook
@@ -50,8 +53,8 @@ export default function Kitchen() {
           <h1 className="text-2xl font-bold text-center mt-10">
             Your Search Result
           </h1>
-          <div className="bg-gray-100 p-5 m-5 rounded-lg">
-            <Recipes searchResult={data} />
+          <div className="bg-gray-100 p-5 m-3 rounded-lg">
+            <Recipes searchResult={data} result={result}/>
           </div>
         </div>
       </div>
