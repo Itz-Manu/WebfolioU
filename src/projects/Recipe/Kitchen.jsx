@@ -2,11 +2,15 @@ import React, { useEffect, useRef, useState } from "react";
 import { LuSearch } from "react-icons/lu";
 import Recipes from "./Recipes";
 import customQuery from "./customQuery";
+import { Outlet } from "react-router-dom";
+import RescipeDeatils from "./rescipeDeatils";
+import BackButton from "../../components/BackButton";
 
 export default function Kitchen() {
-
   const [search, setsearch] = useState("");
   const [result, setresult] = useState(false);
+  const [toggle, setToggle] = useState(false);        // togle rescepi card to rescepi details
+
   const inputRef = useRef();
 
   const handleclick = () => {
@@ -23,9 +27,16 @@ export default function Kitchen() {
 
   //console.log(data);
 
+  
+
+  function handleToggle() {
+    setToggle(prevToggle => !prevToggle);
+  }
+
   return (
     <div>
       <div className="bg-gray-50 p-5">
+        <div className="relative"><BackButton onClick={handleToggle}/></div>
         <h1 className="text-4xl font-bold text-center">Your Kitchen</h1>
 
         <div className="flex justify-center items-center space-x-2 mt-10 gap-3">
@@ -54,7 +65,11 @@ export default function Kitchen() {
             Your Search Result
           </h1>
           <div className="bg-gray-100 p-5 m-3 rounded-lg">
-            <Recipes searchResult={data} result={result}/>
+            {toggle ? (
+              <RescipeDeatils searchResult={data} />
+            ) : (
+              <Recipes searchResult={data} result={result} handleToggle={handleToggle} />
+            )}
           </div>
         </div>
       </div>

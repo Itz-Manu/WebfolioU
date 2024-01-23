@@ -19,7 +19,7 @@ export default function customQuery(search) {
             try {
               setLoading(true);
               const res = await axios.get(
-                `https://api.edamam.com/search?q=${search}&app_id=18a9f709&app_key=c44ee3ca64c0da195118d01e0921883d&from=0&to=3&calories=591-722&health=alcohol-free`,
+                `https://api.edamam.com/search?q=${search}&app_id=18a9f709&app_key=c44ee3ca64c0da195118d01e0921883d&from=0&to=15&calories=591-722&health=alcohol-free`,
                 {
                   signal: controller.signal,                                  // it is used to manage the previous request.
                 }
