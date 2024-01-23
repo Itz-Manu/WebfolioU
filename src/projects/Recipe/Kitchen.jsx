@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { LuSearch } from "react-icons/lu";
 import Recipes from "./Recipes";
 import customQuery from "./customQuery";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import RescipeDeatils from "./rescipeDeatils";
 import BackButton from "../../components/BackButton";
 
@@ -30,13 +30,15 @@ export default function Kitchen() {
   
 
   function handleToggle() {
-    setToggle(prevToggle => !prevToggle);
+    setToggle(!toggle);
   }
 
   return (
     <div>
       <div className="bg-gray-50 p-5">
-        <div className="relative"><BackButton onClick={handleToggle}/></div>
+        <Link to ="/rescepi">
+          <div className="relative"><BackButton onClick={handleToggle}/></div>
+        </Link>
         <h1 className="text-4xl font-bold text-center">Your Kitchen</h1>
 
         <div className="flex justify-center items-center space-x-2 mt-10 gap-3">

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 export default function RescipeDeatils({ searchResult }) {
-  console.log(searchResult);
+  //console.log(searchResult);
   const { index } = useParams();
-  console.log(index);
+  //console.log(index);
 
   const [data, setData] = useState([]);
   const [ingredients, setIngredients] = useState([]);
@@ -15,7 +15,7 @@ export default function RescipeDeatils({ searchResult }) {
     }
   }, []);
 
-  console.log(data);
+  //console.log(data);
 
   useEffect(() => {
     if (data.recipe) {
@@ -26,11 +26,11 @@ export default function RescipeDeatils({ searchResult }) {
   if (data.length == 0)
     return (
       <div className="text-gray-500 text-center text-2xl font-bold">
-        No Result Found
+        Search for something...
       </div>
     );
 
-  console.log(ingredients);
+  //console.log(ingredients);
 
   return (
     <div>
@@ -70,8 +70,8 @@ export default function RescipeDeatils({ searchResult }) {
 
                     <div className="item-details my-auto">
                       <h4 className="text-lg font-semibold">{item.food}</h4>
-                      <p className="text-gray-600 text-sm">{item.text}</p>
-                      <p className="text-gray-600 text-sm"> Measure: {item.measure} , Quantity: {item.quantity}</p>
+                      <p className="text-gray-600 text-sm mb-1">{item.text}</p>
+                      <p className="text-gray-600 text-sm"> <span className="font-medium">Measure:</span>  {item.measure == null ? "NaN" : item.measure} , <span className="font-medium">Quantity:</span> {item.quantity}</p>
                     </div>
                   </div>
                 );

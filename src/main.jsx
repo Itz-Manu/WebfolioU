@@ -7,7 +7,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error from "./Pages/Error.jsx";
 import RescipeDeatils from "./projects/Recipe/rescipeDeatils.jsx";
 import Recipes from "./projects/Recipe/Recipes.jsx";
-import Kitchen from "./projects/Recipe/Kitchen.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +17,11 @@ const router = createBrowserRouter([
       {
         path: "/rescepi/:index",
         element: <RescipeDeatils />,
+      },
+
+      {
+        path: "/rescepi",
+        element: <Recipes />,
       },
     ],
   },
