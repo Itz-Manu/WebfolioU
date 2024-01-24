@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { conf } from "../../conf/conf";
 
 export default function customQuery(search) {
   const [data, setData] = useState([]);
@@ -12,6 +13,8 @@ export default function customQuery(search) {
 
     const controller = new AbortController();                       // it a function in axios which is used to get response in sequence  (Used for race condition)
 
+    const apiKey = conf.rescipeKey;
+
     if (search.trim() !== '') {
         (async () => {
             // case for interview (if interviewer ask to "use async await in useEffect" or "run useEffect when response is received")
@@ -19,17 +22,17 @@ export default function customQuery(search) {
             try {
               setLoading(true);
               const res = await axios.get(
-                `https://api.edamam.com/search?q=${search}&app_id=18a9f709&app_key=c44ee3ca64c0da195118d01e0921883d&from=0&to=30&calories=591-722&health=alcohol-free`,
+                `https://api.edamam.com/search?q=${search}&app_id=18a9f709&app_key=${apiKey}&from=0&to=30&calories=591-722&health=alcohol-free`,
                 {
                   signal: controller.signal,                                  // it is used to manage the previous request.
                 }
               );
               setData(res.data.hits);
-              console.log(res);
+              //console.log(res);
               setLoading(false);
             } catch (error) {
               if (axios.isCancel(error)) {                                    // it is used to manage the controller.signal, controller cancel the previous request but it send an error. So, we have to handle that error.
-                console.log("Request canceled", error.message);
+                //console.log("Request canceled", error.message);
                 return;
               }
       

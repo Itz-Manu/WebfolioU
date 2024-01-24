@@ -2,10 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 export default function RescipeDeatils({ searchResult }) {
-  //console.log(searchResult);
+ 
   const { index } = useParams();
-  //console.log(index);
-
   const [data, setData] = useState([]);
   const [ingredients, setIngredients] = useState([]);
 
@@ -29,8 +27,6 @@ export default function RescipeDeatils({ searchResult }) {
         Search for something...
       </div>
     );
-
-  //console.log(ingredients);
 
   return (
     <div>
