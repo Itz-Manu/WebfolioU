@@ -38,7 +38,6 @@ export default function Recipes({ searchResult, result, handleToggle }) {
         {data.map((item, index) => {
           return (
             <div key={index} className="max-w-md mx-auto bg-white rounded-xl overflow-hidden shadow-lg w-[17vw] mb-5 flex flex-col justify-between">
-              <div>
                 <img
                   className=" object-cover"
                   src={item.recipe.image}
@@ -54,20 +53,19 @@ export default function Recipes({ searchResult, result, handleToggle }) {
                     {Description(item.recipe.ingredientLines)}...{" "}
                     <span>
                     <Link to={`/rescepi/${index}`}>
-                      <button className="text-indigo-400 cursor-pointer">
+                      <button onClick={handleToggle} className="text-indigo-400 cursor-pointer">
                         Read More
                       </button>
                       </Link>
                     </span>
                   </p>
                 </div>
-              </div>
               
               <div className="p-5">
-              <Link to={`/rescepi/${index}`}>
-                  <button onClick={handleToggle} className="bg-indigo-500 text-white font-semibold px-4 py-2 rounded-md hover:bg-indigo-600">
-                    Know More
-                  </button>
+                <Link to={`/rescepi/${index}`}>
+                    <button onClick={handleToggle} className="bg-indigo-500 text-white font-semibold px-4 py-2 rounded-md hover:bg-indigo-600">
+                      Know More
+                    </button>
                 </Link>
               </div>
              
