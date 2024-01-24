@@ -9,27 +9,21 @@ import BackButton from "../../components/BackButton";
 export default function Kitchen() {
   const [search, setsearch] = useState("");
   const [result, setresult] = useState(false);
-  const [toggle, setToggle] = useState(false);        // togle rescepi card to rescepi details
+  const [toggle, setToggle] = useState(false);        // toggle rescepi card to rescepi details
 
   const inputRef = useRef();
 
-  const handleclick = () => {
+  const handleclick = () => {                         // This function handle input from user
     const inputText = inputRef.current.value;
     setsearch(inputText);
     setresult(true);
   };
 
-  const [data, error, loading] = customQuery(search); // customQuery is a custom hook
+  const [data, error, loading] = customQuery(search);       // customQuery is a custom hook for API
 
   if (error) return <div>Something went wrong...</div>;
 
-  if (loading) return <div>Loading...</div>;
-
-  //console.log(data);
-
-  
-
-  function handleToggle() {
+  function handleToggle() {                           // This function toggle betwwen rescepi card and rescepi details
     setToggle(!toggle);
   }
 
@@ -51,6 +45,7 @@ export default function Kitchen() {
               type="text"
               ref={inputRef}
               placeholder="Enter food item..."
+              onChange={handleclick}
             />
           </div>
 
