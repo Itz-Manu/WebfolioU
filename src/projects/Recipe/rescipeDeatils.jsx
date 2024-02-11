@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 export default function RescipeDeatils({ searchResult }) {
  
-  const { index } = useParams();
+  const { index } = useParams();                            // This hook is used to get index from url (we used in codeandblog too) provided by react-router-dom
   const [data, setData] = useState([]);
   const [ingredients, setIngredients] = useState([]);
 
