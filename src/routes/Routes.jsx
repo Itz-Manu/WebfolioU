@@ -5,12 +5,16 @@ import { createBrowserRouter, createRoutesFromElements, Route} from "react-route
 
 import App from "../App.jsx";
 import Home from "../Pages/Home.jsx";
+import Kitchen from "../projects/Recipe/Kitchen.jsx";
+import TodoBasic from "../projects/ToDo-Basic/todo-basic.jsx";
 
 
 const Router = createBrowserRouter (
     createRoutesFromElements(
         <Route path="/" element={<App />}>
             <Route index element={<Home/>} />
+            <Route path="/Kitchen" element={<Kitchen />} />
+            <Route path="/todo" element={<TodoBasic />} />
         </Route>
     )
 )

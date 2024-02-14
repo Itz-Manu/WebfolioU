@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function BasicProjects() {
   return (
@@ -15,10 +16,10 @@ export default function BasicProjects() {
           <div className="flex flex-col items-start gap-1 border-none rounded-lg p-5 min-h-[150px] dark:border-gray-800  dark:bg-slate-700  hover:bg-slate-800 shadow-xl">
             <h4 className="font-semibold text-lg mb-1">Password Generator</h4>
             <p className="text-sm flex-1 text-left leading-6 text-gray-300">
-            Instantly generate and copy unique, strong passwords for enhanced security!
+              Instantly generate and copy unique, strong passwords for enhanced security!
             </p>
             <div className="btn text-sm font-normal flex gap-5 px-3">
-              <button className="hover:text-yellow-300">Click here to see</button>
+              <a href="https://vaultforge.vercel.app/" target="_blank"  referrerPolicy="no-referrer"><button className="hover:text-yellow-300">Click here to see</button></a> 
             </div>
           </div>
 
@@ -28,7 +29,7 @@ export default function BasicProjects() {
               Discover delicious recipes for every occasion. Cook with confidence and creativity!
             </p>
             <div className="btn text-sm font-normal flex gap-5 px-3">
-              <button className="hover:text-yellow-300">Click here to see</button>
+              <Link to="/Kitchen"><button className="hover:text-yellow-300">Click here to see</button></Link>
             </div>
           </div>
 
@@ -38,7 +39,7 @@ export default function BasicProjects() {
               Effortlessly manage tasks and stay productive with our streamlined to-do app.
             </p>
             <div className="btn text-sm font-normal flex gap-5 px-3">
-              <button className="hover:text-yellow-300">Click here to see</button>
+              <Link to="/todo"><button className="hover:text-yellow-300">Click here to see</button></Link>
             </div>
           </div>
         </div>

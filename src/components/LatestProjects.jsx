@@ -1,5 +1,4 @@
 import React from "react";
-import { FaGithub } from "react-icons/fa";
 
 export default function LatestProjects() {
   return (
@@ -21,8 +20,8 @@ export default function LatestProjects() {
                 Engage with diverse topics and join the conversation today!
             </p>
             <div className="btn text-sm font-normal flex gap-5 px-3">
-              <button className="hover:text-yellow-300">Live</button>
-              <button className="hover:text-yellow-300">Github</button>
+              <a href="https://code-and-blog.vercel.app/" target="_blank"  referrerPolicy="no-referrer"><button className="hover:text-yellow-300">View</button></a> 
+              <a href="https://github.com/SAGARSINGH-1/CodeAndBlog" target="_blank"  referrerPolicy="no-referrer"><button className="hover:text-yellow-300">Github</button></a> 
             </div>
           </div>
           <div className="flex flex-col items-start space-y-2 border-none rounded-lg border-gray-200 bg-white px-4 py-6 text-left md:px-6 md:py-8 dark:bg-slate-800 hover:bg-slate-900 shadow-xl">
@@ -32,8 +31,8 @@ export default function LatestProjects() {
             Test your skills, learn new facts, and challenge friends!
             </p>
             <div className="btn text-sm font-normal flex gap-5 px-3">
-              <button className="hover:text-yellow-300">Live</button>
-              <button className="hover:text-yellow-300">Github</button>
+              <a href="https://quiz-app-clg.vercel.app/" target="_blank"  referrerPolicy="no-referrer"><button className="hover:text-yellow-300">View</button></a> 
+              <a href="https://github.com/SAGARSINGH-1/Quiz-App" target="_blank"  referrerPolicy="no-referrer"><button className="hover:text-yellow-300">Github</button></a> 
             </div>
           </div>
           <div className="flex flex-col items-start space-y-2 border-none rounded-lg border-gray-200 bg-white px-4 py-6 text-left md:px-6 md:py-8 dark:bg-slate-800 hover:bg-slate-900 shadow-xl">
@@ -43,8 +42,8 @@ export default function LatestProjects() {
             and personalized weather updates, wherever you go!
             </p>
             <div className="btn text-sm font-normal flex gap-5 px-3">
-              <button className="hover:text-yellow-300">Live</button>
-              <button className="hover:text-yellow-300">Github</button>
+              <a href="https://astroclima.vercel.app/" target="_blank"  referrerPolicy="no-referrer"><button className="hover:text-yellow-300">View</button></a> 
+              <a href="https://github.com/Itz-Manu/AstroClima" target="_blank"  referrerPolicy="no-referrer"><button className="hover:text-yellow-300">Github</button></a> 
             </div>
           </div>
         </div>
