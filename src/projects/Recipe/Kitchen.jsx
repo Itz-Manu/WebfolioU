@@ -4,7 +4,8 @@ import Recipes from "./Recipes";
 import customQuery from "./customQuery";
 import { Link, Outlet } from "react-router-dom";
 import RescipeDeatils from "./rescipeDeatils";
-import BackButton from "../../components/BackButton";
+import BackButton from "../../components/Layout/BackButton";
+
 
 export default function Kitchen() {
   const [search, setsearch] = useState("");

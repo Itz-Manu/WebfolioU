@@ -1,5 +1,6 @@
 import React from 'react'
-import { FaRegStar, FaGithub } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
+
 
 export default function Footer() {
     return (
@@ -9,9 +10,16 @@ export default function Footer() {
                     <div className='font-semibold min-[600px]:text-base min-[320px]:text-sm'>
                         &copy; 2024 WebFolioU. All rights reserved.
                     </div>
-                    <div>
-                        <button className='border-white border-2 cursor-pointer rounded-md p-1 bg-transparent hover:text-yellow-200 hover:border-yellow-200 font-semibold flex gap-2'>Github<FaGithub size="1.5em" /></button>
+
+                    <div className='flex my-auto gap-5 items-center'>
+                        <span className="font-semibold">@Itz_Manuv</span>
+                        <span> | </span>
+                        <div className="bg-white text-gray-800 p-1 rounded-full cursor-pointer">
+                            <FaUserCircle size="1.5em" />
+                        </div>
                     </div>
+
+
                 </div>
             </footer>
         </div>
