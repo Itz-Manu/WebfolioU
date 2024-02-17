@@ -11,7 +11,7 @@ export default function Hero() {
               Aspiring Fronentend Dev,
             </p>
           </div>
-          <div className="prose max-w-none font-medium dark:text-white">
+          <div className="prose max-w-none font-sans font-medium dark:text-white">
             <p>
               I design digital experiences that are both beautiful and functional. My passion for understanding user
               behavior and translating insights into intuitive designs is at the core of my work.
@@ -19,16 +19,16 @@ export default function Hero() {
           </div>
 
           <div className='btn flex gap-7 mx-5 my-3 text-black'>
-            <button className="px-4 py-2 font-semibold bg-yellow-500 rounded-md shadow-md hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+            <button className='bg-button'>
               Hire Me
             </button>
-            <button className="px-4 py-2 font-semibold bg-yellow-500 rounded-md shadow-md hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50">
+            <button className='bg-button'>
               View Portfolio
-            </button>
+            </button >
           </div>
         </div>
         <div className="relative w-full max-w-sm mx-auto md:max-w-none">
-          <div className="absolute inset-0 rounded-xl backdrop-blur-3"  />
+          <div className="absolute inset-0 rounded-xl backdrop-blur-3" />
           <img
             alt="John"
             className="mx-auto aspect-square overflow-hidden rounded-xl object-cover"

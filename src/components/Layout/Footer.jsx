@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaUserCircle } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 
 export default function Footer() {
@@ -14,8 +15,10 @@ export default function Footer() {
                     <div className='flex my-auto gap-5 items-center'>
                         <span className="font-semibold">@Itz_Manuv</span>
                         <span> | </span>
-                        <div className="bg-white text-gray-800 p-1 rounded-full cursor-pointer">
-                            <FaUserCircle size="1.5em" />
+                        <div className="bg-white text-gray-800 rounded-full cursor-pointer overflow-hidden">
+                            <Link to="https://github.com/Itz-Manu" target='_blank'>
+                                <img className="object-contain rounded-full" src="https://avatars.githubusercontent.com/Itz-Manu?size=40" alt="avatar" />
+                            </Link>
                         </div>
                     </div>
 

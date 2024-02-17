@@ -33,47 +33,47 @@ export default function Recipes({ searchResult, result, handleToggle }) {
   }
 
   return (
-    <div>
-      <div className="flex flex-wrap">
-        {data.map((item, index) => {
-          return (
-            <div key={index} className="max-w-md mx-auto bg-white rounded-xl overflow-hidden shadow-lg w-[17vw] mb-5 flex flex-col justify-between">
+   
+    <div className="flex flex-wrap justify-center">
+    {data.map((item, index) => {
+        return (
+            <div key={index} className="max-w-md mx-auto bg-white rounded-xl overflow-hidden shadow-lg w-full lg:w-[17rem] mb-5 lg:mx-2">
                 <img
-                  className=" object-cover"
-                  src={item.recipe.image}
-                  alt="Card"
+                    className="object-cover w-full h-48 lg:h-64"
+                    src={item.recipe.image}
+                    alt="Card"
                 />
 
                 <div className="p-5">
-                  <h2 className="font-bold text-lg mb-2">
-                    {item.recipe.label.split(" ").slice(0, 5).join(" ")}
-                  </h2>
+                    <h2 className="font-bold text-lg mb-2">
+                        {item.recipe.label.split(" ").slice(0, 5).join(" ")}
+                    </h2>
 
-                  <p className="text-gray-600">
-                    {Description(item.recipe.ingredientLines)}...{" "}
-                    <span>
-                    <Link to={`/rescepi/${index}`}>
-                      <button onClick={handleToggle} className="text-indigo-400 cursor-pointer">
-                        Read More
-                      </button>
-                      </Link>
-                    </span>
-                  </p>
+                    <p className="text-gray-600">
+                        {Description(item.recipe.ingredientLines)}...{" "}
+                        <span>
+                            <Link to={`/Kitchen/${index}`}>
+                                <button onClick={handleToggle} className="text-indigo-400 cursor-pointer">
+                                    Read More
+                                </button>
+                            </Link>
+                        </span>
+                    </p>
                 </div>
               
-              <div className="p-5">
-                <Link to={`/rescepi/${index}`}>
-                    <button onClick={handleToggle} className="bg-indigo-500 text-white font-semibold px-4 py-2 rounded-md hover:bg-indigo-600">
-                      Know More
-                    </button>
-                </Link>
-              </div>
+                <div className="p-5">
+                    <Link to={`/Kitchen/${index}`}>
+                        <button onClick={handleToggle} className="bg-indigo-500 text-white font-semibold px-4 py-2 rounded-md hover:bg-indigo-600">
+                            Know More
+                        </button>
+                    </Link>
+                </div>
              
             </div>
-          );
-        })}
-      </div>
-    </div>
+        );
+    })}
+</div>
+
   );
 }
 

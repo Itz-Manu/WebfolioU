@@ -7,14 +7,22 @@ import App from "../App.jsx";
 import Home from "../Pages/Home.jsx";
 import Kitchen from "../projects/Recipe/Kitchen.jsx";
 import TodoBasic from "../projects/ToDo-Basic/todo-basic.jsx";
+import Error from "../Pages/Error.jsx";
+import RescipeDeatils from "../projects/Recipe/rescipeDeatils.jsx";
 
 
 const Router = createBrowserRouter (
     createRoutesFromElements(
         <Route path="/" element={<App />}>
             <Route index element={<Home/>} />
-            <Route path="/Kitchen" element={<Kitchen />} />
+            <Route path="/Kitchen" element={<Kitchen />}>
+                <Route path="/Kitchen/:index" element={<RescipeDeatils />} /> 
+
+            </Route>
             <Route path="/todo" element={<TodoBasic />} />
+
+
+            <Route path='*' element={<Error />} />
         </Route>
     )
 )

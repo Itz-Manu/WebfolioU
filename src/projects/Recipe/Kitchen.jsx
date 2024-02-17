@@ -29,48 +29,44 @@ export default function Kitchen() {
   }
 
   return (
-    <div>
-      <div className="bg-gray-50 p-5">
-        <Link to ="/rescepi">
-          <div className="relative"><BackButton onClick={handleToggle}/></div>
-        </Link>
-        <h1 className="text-4xl font-bold text-center">Your Kitchen</h1>
+      <div className="bg-gray-50 p-5 max-w-5xl border-2 mx-auto">
+    <Link to="/Kitchen">
+        <div className="relative"><BackButton onClick={handleToggle}/></div>
+    </Link>
+    <h1 className="text-4xl font-bold text-center mt-5 mb-10">Your Kitchen</h1>
 
-        <div className="flex justify-center items-center space-x-2 mt-10 gap-3">
-          <div className="bg-gray-100 flex w-[30vw] p-2 px-3 rounded-md">
+    <div className="flex flex-col justify-center items-center space-y-5 lg:flex-row lg:items-center lg:space-x-3 lg:space-y-0 lg:mt-10">
+        <div className="bg-gray-100 flex w-full lg:w-[30vw] max-w-[400px] p-2 px-3 rounded-md">
             <div>
-              <LuSearch size="1.5em" className="mt-1 mr-2" />
+                <LuSearch size="1.5em" className="mt-1 mr-2" />
             </div>
             <input
-              className="bg-gray-100 w-[30vw] px-3 rounded-md outline-none"
-              type="text"
-              ref={inputRef}
-              placeholder="Enter food item..."
-              onChange={handleclick}
+                className="bg-gray-100 w-full px-3 rounded-md outline-none"
+                type="text"
+                ref={inputRef}
+                placeholder="Enter food item..."
+                onChange={handleclick}
             />
-          </div>
+        </div>
 
-          <button
+        <button
             onClick={handleclick}
             className="bg-indigo-500 text-white px-5 py-2 font-bold rounded-md hover:bg-indigo-400"
-          >
+        >
             Search
-          </button>
-        </div>
-
-        <div>
-          <h1 className="text-2xl font-bold text-center mt-10">
-            Your Search Result
-          </h1>
-          <div className="bg-gray-100 p-5 m-3 rounded-lg">
-            {toggle ? (
-              <RescipeDeatils searchResult={data} />
-            ) : (
-              <Recipes searchResult={data} result={result} handleToggle={handleToggle} />
-            )}
-          </div>
-        </div>
-      </div>
+        </button>
     </div>
+
+    <div>
+        <h1 className="text-2xl font-bold text-center mt-10">Your Search Result</h1>
+        <div className="bg-gray-100 p-5 m-3 rounded-lg">
+            {toggle ? (
+                <RescipeDeatils searchResult={data} />
+            ) : (
+                <Recipes searchResult={data} result={result} handleToggle={handleToggle} />
+            )}
+        </div>
+    </div>
+</div>
   );
 }
