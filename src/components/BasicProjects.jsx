@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { BasicProject } from './ProjectDetails';
 
 export default function BasicProjects() {
+
+  const [projects, setProjects] = useState(BasicProject);
+
   return (
     <section className="w-full py-12 ">
       <div className="w-full py-12">
@@ -13,35 +17,19 @@ export default function BasicProjects() {
           </p>
         </div>
         <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
-          <div className="flex flex-col items-start gap-1 border-none rounded-lg p-5 min-h-[150px] dark:border-gray-800  dark:bg-slate-700  hover:bg-slate-800 shadow-xl">
-            <h4 className="font-semibold text-lg mb-1">Password Generator</h4>
-            <p className="text-sm flex-1 text-left leading-6 text-gray-300">
-              Instantly generate and copy unique, strong passwords for enhanced security!
-            </p>
-            <div className="btn text-sm font-normal flex gap-5 px-3">
-              <a href="https://vaultforge.vercel.app/" target="_blank"  referrerPolicy="no-referrer"><button className="hover:text-yellow-300">Click here to see</button></a> 
-            </div>
-          </div>
-
-          <div className="flex flex-col items-start gap-1 border-none rounded-lg p-5 min-h-[150px] dark:border-gray-800  dark:bg-slate-700  hover:bg-slate-800 shadow-xl">
-            <h4 className="font-semibold text-lg mb-1">Recipe App</h4>
-            <p className="text-sm flex-1 text-left leading-6 text-gray-300">
-              Discover delicious recipes for every occasion. Cook with confidence and creativity!
-            </p>
-            <div className="btn text-sm font-normal flex gap-5 px-3">
-              <Link to="/Kitchen"><button className="hover:text-yellow-300">Click here to see</button></Link>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-start gap-1 border-none rounded-lg p-5 min-h-[150px] dark:border-gray-800  dark:bg-slate-700  hover:bg-slate-800 shadow-xl">
-            <h4 className="font-semibold text-lg mb-1">To-Do List</h4>
-            <p className="text-sm flex-1 text-left leading-6 text-gray-300">
-              Effortlessly manage tasks and stay productive with our streamlined to-do app.
-            </p>
-            <div className="btn text-sm font-normal flex gap-5 px-3">
-              <Link to="/todo"><button className="hover:text-yellow-300">Click here to see</button></Link>
-            </div>
-          </div>
+          {
+              projects.map((project) => {
+                return (
+                  <div key={project.id} className="flex flex-col items-start gap-1 border-none rounded-lg p-5 min-h-[150px] bg-slate-900 hover:bg-slate-800 shadow-xl">
+                    <h4 className="font-semibold text-lg mb-1">{project.title}</h4>
+                    <p className="text-sm flex-1 text-left leading-6 text-gray-300">{project.description}</p>
+                    <div className="btn text-sm font-normal flex gap-5 px-3">
+                      <Link to={project.preview} referrerPolicy="no-referrer"><button className="hover:text-red-400">Click here to see</button></Link>
+                    </div>
+                  </div>
+                );
+              })
+          }
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ export default function Tasks({ taskId, onDeleteClick }) {
     const handleSaveClick = () => {
         setIsEditing(false);
         const editedText = inputRef.current.value;
-        inputRef.current.value = ''; 
+        inputRef.current.value = '';
         localStorage.setItem(editingTaskId, JSON.stringify(editedText));
     };
 
@@ -30,35 +30,31 @@ export default function Tasks({ taskId, onDeleteClick }) {
 
 
     return (
-        <div>
-            <div className={`p-3 flex rounded-lg items-center justify-between my-3 ${checked ? "bg-green-400" : "bg-slate-400"} `}>
-                <div className="flex items-center space-x-2">
-                    <input onChange={handlecheckbox} type="checkbox" className="border-gray-400 w-5 h-5" />
-                    <input
-                        type="text"
-                        ref={inputRef}
-                        className={`w-[33vw] p-2 rounded-md bg-white ${checked ? "line-through bg-green-300" : ""}  `}
-                        placeholder={localStorage.getItem(taskId)}
-                        disabled={!isEditing}
-                    />
-                </div>
-                <div className="flex space-x-2">
-                    {!isEditing ? (
-                        <div onClick={() => handleEditClick(taskId)} className="bg-blue-500 text-white px-3 py-1 font-medium rounded-md cursor-pointer hover:bg-blue-600">
-                            Edit
-                        </div>
-                        ) : (
-                        <button onClick={handleSaveClick}
-                            className='bg-blue-500 text-white px-3 py-1 font-medium rounded-md cursor-pointer hover:bg-blue-600'>
-                            Save
-                        </button>
-                    )}
-                    <div onClick={handleDeleteClick} className="bg-red-500 text-white px-3 py-1 font-medium rounded-md cursor-pointer hover:bg-red-600">
-                        Delete
+        <div className={`p-3 flex rounded-lg items-center justify-between my-3 ${checked ? "bg-green-400" : "bg-slate-800"} `}>
+            <div className="flex items-center space-x-2 px-3">
+                <input onChange={handlecheckbox} type="checkbox" className="border-gray-400 w-5 h-5" />
+                <input
+                    type="text"
+                    ref={inputRef}
+                    className={`w-full sm:w-[33vw] p-2 px-3 rounded-md ${checked ? "line-through bg-green-400" : "bg-slate-800"} ${isEditing ? "border-2 border-white" : "border-none"} `}
+                    placeholder={localStorage.getItem(taskId).replace(/['"]+/g, '')}
+                    disabled={!isEditing}
+                />
+            </div>
+            <div className="flex space-x-2">
+                {!isEditing ? (
+                    <div onClick={() => handleEditClick(taskId)} className="bg-blue-500 text-white px-3 py-1 font-medium rounded-md cursor-pointer hover:bg-blue-600">
+                        Edit
                     </div>
+                ) : (
+                    <button onClick={handleSaveClick} className='bg-blue-500 text-white px-3 py-1 font-medium rounded-md cursor-pointer hover:bg-blue-600'>
+                        Save
+                    </button>
+                )}
+                <div onClick={handleDeleteClick} className="bg-red-500 text-white px-3 py-1 font-medium rounded-md cursor-pointer hover:bg-red-600">
+                    Delete
                 </div>
             </div>
-
         </div>
     )
 }
